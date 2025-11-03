@@ -1,0 +1,69 @@
+.rulesBackground {
+    width: 100vw;
+    height: 100vh;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 1;
+}
+
+.rules {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    height: 100%;
+}
+
+.rules > div > h2 {
+    color: black;
+    text-transform: uppercase;
+    font-weight: 700;
+}
+
+.btnClose2 {display: none;}
+
+.rules > img {
+    width: 100%;
+}
+
+.btnClose1, .btnClose2 {
+    padding: 1rem;
+    border-radius: 50%;
+    transition-duration: 0.2s;
+}
+
+.btnClose1:hover, .btnClose2:hover {
+    background-color: #0004;
+}
+
+@media (min-width: 920px) {
+    .rulesBackground {
+        background-color: #0008;
+        justify-content: center;
+    }
+
+    .rules {
+        background-color: white;
+        height: auto;
+        justify-content: baseline;
+        gap: 1rem;
+        padding: 1.5rem;
+        border-radius: 1rem;
+    }
+
+    .rules > div {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+    }
+
+    .btnClose1 {display: none;}
+    .btnClose2 {display: inline;}
+}
+

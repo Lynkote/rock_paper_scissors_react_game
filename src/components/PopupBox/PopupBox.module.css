@@ -1,0 +1,51 @@
+.popupBoxBackgound {
+    width: 100vw;
+    height: 100vh;
+    background-color: #0004;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 1;
+}
+
+.popupBox {
+    padding: 0.5rem 1rem;
+    background-color: #fff;
+    width: 300px;
+    height: 160px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    text-transform: uppercase;
+    font-weight: 700;
+    letter-spacing: 2px;
+    border-radius: 1rem;
+}
+
+.popupBoxButtonContainer {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 100%;
+}
+
+.popupBoxButtonContainer > button {
+    text-transform: uppercase;
+    font-weight: 700;
+    letter-spacing: 2px;
+    padding: 0.5rem 1rem;
+    transition-duration: 0.2s;
+    border-radius: 0.5rem;
+}
+
+.popupBoxButtonContainer > button:hover {
+    background-color: #0004;
+}
+
+.btnConfirm {
+    border: solid 1px black;
+}

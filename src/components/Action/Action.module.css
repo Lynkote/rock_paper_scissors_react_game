@@ -1,0 +1,29 @@
+.action {
+    background-color: white;
+    width: 120px;
+    height: 120px;
+    padding: 1.5rem;
+    border: 1rem solid var(--action-border-base);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 2px 4px #0004 inset;
+}
+
+.action > img {
+    width: 100%;
+    transition-duration: 0.2s;
+}
+
+.actionCaseButton {
+    transition-duration: 0.2s;
+}
+
+.actionCaseButton:hover {
+    border-color: var(--action-border-hover);
+}
+
+.actionCaseButton:hover > img {
+    scale: 1.1;
+}

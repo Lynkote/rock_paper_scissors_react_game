@@ -1,0 +1,33 @@
+.chooseOptions {
+    width: 200px;
+    position: relative;
+}
+
+.chooseOptions > img {
+    width: 100%;
+    scale: 1.;
+}
+
+.rock, .paper, .scissors {
+    position: absolute;
+}
+
+.rock {
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%, 40%);
+}
+
+.paper {
+    left: 0;
+    top: 0;
+    transform: translate(-40%, -40%);
+}
+
+.scissors {
+    right: 0;
+    top: 0;
+    transform: translate(40%, -40%);
+}
+
+

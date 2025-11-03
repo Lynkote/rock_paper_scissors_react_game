@@ -1,0 +1,130 @@
+.result {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-around;
+    flex: 1 1 300px;
+}
+
+.result > div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.result > div > p {
+    letter-spacing: 2px;
+    color: white;
+    text-transform: uppercase;
+    font-weight: 700;
+}
+
+.actionBackgound {
+    background-color: #0004;
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+}
+
+.winner {
+    box-shadow: 0 0 200px #fff8;
+}
+
+.playerAction, .aiAction {
+    gap: 2rem;
+}
+
+.playerAction .actionElement {
+    animation-name: ready;
+    animation-duration: 0.5s;
+}
+
+.aiAction .actionElement, .gameOver {
+    opacity: 0.0;
+    animation-name: ready;
+    animation-duration: 0.5s;
+    animation-fill-mode: forwards; /* maintains the final change */
+}
+
+.aiAction .actionElement {
+    animation-delay: 0.3s;
+}
+
+.gameOver {
+    padding-top: 1rem;
+    width: 100%;
+    animation-delay: 0.8s;
+}
+
+.gameOver > p {
+    font-size: 3rem;
+    text-transform: uppercase;
+    padding-bottom: 1rem;
+    color: white;
+    font-weight: 700;
+    flex-grow: 0;
+}
+
+.gameOver > button {
+    padding: 0.5rem 0;
+    width: 200px;
+    background-color: white;
+    border-radius: 0.5rem;
+    text-transform: uppercase;
+    font-weight: 600;
+    color: var(--color-text-dark);
+    letter-spacing: 2px;
+}
+
+.gameOver > button:hover {
+    color: var(--color-red-600);
+    animation-duration: 0.2s;
+}
+
+@media (min-width: 920px) {
+    .result {
+        gap: 4rem;
+    }
+
+    .playerAction > div, .aiAction > div {
+        order: 1;
+    }
+
+    .actionBackgound {
+        width: 180px;
+        height: 180px;
+    }
+
+    .playerAction {
+        order: 1;
+    }
+
+    .aiAction {
+        order: 3;
+    }
+
+    .actionElement {
+        width: 180px;
+        height: 180px;
+        padding: 2rem;
+        border-width: 1.5rem;
+    }
+
+    .gameOver {
+        order: 2;
+        padding-top: 0;
+        width: auto;
+    }
+}
+
+@keyframes ready {
+    from {
+        transform: translateY(-20%);
+        opacity: 0.0;
+    }
+
+    to {
+        transform: translateY(0%);
+        opacity: 1.0;
+    }
+}

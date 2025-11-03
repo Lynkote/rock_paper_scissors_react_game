@@ -10,7 +10,7 @@ type GameStateType = 'choose' | 'result';
 type ActionType = 'rock' | 'paper' | 'scissors';
 
 export default function MainScreen() {
-    const [gameState, setGameState] = useState<GameStateType>('result');
+    const [gameState, setGameState] = useState<GameStateType>('choose');
     const [gameScore, setGameScore] = useState<number>(0);
     const [playerAction, setPlayerAction] = useState<ActionType>('scissors');
     const [aiAction, setAiAction] = useState<ActionType>('scissors');
@@ -23,7 +23,7 @@ export default function MainScreen() {
     };
 
     const removeSave = (): void => {
-        localStorage.removeItem('save');
+        localStorage.removeItem('score');
     }
 
     useEffect(() => {
@@ -54,7 +54,7 @@ export default function MainScreen() {
         if (gameResult === 'win') {
             setGameScore(prev => {
                 const newScore = prev + 1;
-                setGameScoreToLocalStorage(newScore);
+                setGameScoreToLocalStorage(newScore); // save
                 return newScore
             });
         }
@@ -69,15 +69,17 @@ export default function MainScreen() {
         <main>
             {isClearBoxOpen && 
             <PopupBox 
-            handleOnCancel={() => setIsCleaBoxOpen(false)} 
+            message='Clear score?'
+            labelConfirm='Clear all'
+            labelCancel='No'
             handleOnConfirm={() => {
-                setGameScore(0); 
                 removeSave();
+                setGameScore(0); 
                 setIsCleaBoxOpen(false);
             }}
-            message='Clear score?'
-            labelCancel='No'
-            labelConfirm='Clear all'
+            handleOnCancel={() => {
+                setIsCleaBoxOpen(false)
+            }} 
             />}
             
             <header className={styles.headerContainer}>
